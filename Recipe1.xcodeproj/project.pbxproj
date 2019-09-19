@@ -15,6 +15,8 @@
 		47CEB61F2333A7EC002C9923 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CEB61E2333A7EC002C9923 /* AddViewController.swift */; };
 		47CEB6212333A80E002C9923 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CEB6202333A80E002C9923 /* DetailViewController.swift */; };
 		47CEB6232333C4E4002C9923 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CEB6222333C4E3002C9923 /* CustomTableViewCell.swift */; };
+		47CEB6252333CDAF002C9923 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CEB6242333CDAF002C9923 /* Recipe.swift */; };
+		47CEB6272333CE38002C9923 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CEB6262333CE38002C9923 /* RecipeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		47CEB61E2333A7EC002C9923 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		47CEB6202333A80E002C9923 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		47CEB6222333C4E3002C9923 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		47CEB6242333CDAF002C9923 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		47CEB6262333CE38002C9923 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				47CEB61323338655002C9923 /* Assets.xcassets */,
 				47CEB61523338655002C9923 /* LaunchScreen.storyboard */,
 				47CEB61823338655002C9923 /* Info.plist */,
+				47CEB6242333CDAF002C9923 /* Recipe.swift */,
+				47CEB6262333CE38002C9923 /* RecipeManager.swift */,
 			);
 			path = Recipe1;
 			sourceTree = "<group>";
@@ -147,6 +153,8 @@
 				47CEB60F23338653002C9923 /* ViewController.swift in Sources */,
 				47CEB6232333C4E4002C9923 /* CustomTableViewCell.swift in Sources */,
 				47CEB60D23338653002C9923 /* AppDelegate.swift in Sources */,
+				47CEB6252333CDAF002C9923 /* Recipe.swift in Sources */,
+				47CEB6272333CE38002C9923 /* RecipeManager.swift in Sources */,
 				47CEB61F2333A7EC002C9923 /* AddViewController.swift in Sources */,
 				47CEB6212333A80E002C9923 /* DetailViewController.swift in Sources */,
 			);
