@@ -10,11 +10,17 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var preRecipe : String?
     @IBOutlet weak var recipeContent: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         recipeContent.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.title = preRecipe
     }
     
 

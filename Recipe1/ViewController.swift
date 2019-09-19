@@ -19,7 +19,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = mainTableView.dequeueReusableCell(withIdentifier: "customcell") as! UITableViewCell
+        let cell = mainTableView.dequeueReusableCell(withIdentifier: "customcell") as! CustomTableViewCell
         
         if indexPath.item % 2 == 0 {
             cell.backgroundColor = UIColor.clear
@@ -31,8 +31,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         //cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.text = array[indexPath.item]
+        cell.recipe = cell.textLabel?.text!
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailviewsegue"{
+            let cell = sender as! CustomTableViewCell
+            let detailViewSegue = segue.destination as! DetailViewController
+            detailViewSegue.preRecipe = cell.recipe
+            
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
