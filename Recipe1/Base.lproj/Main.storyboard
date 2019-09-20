@@ -37,7 +37,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="titleDoneButtonClick:" destination="FMv-6K-6fZ" eventType="editingDidEndOnExit" id="tsA-fw-JwW"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IXp-EM-gdi">
                                 <rect key="frame" x="0.0" y="249" width="414" height="496"/>
@@ -68,6 +71,19 @@
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dsi-vt-E6B">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Recipe" id="eYa-x3-Wiw">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="S9o-pH-s1I">
+                                            <connections>
+                                                <action selector="doneButtonClick:" destination="FMv-6K-6fZ" id="9vR-6y-cfW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -93,6 +109,8 @@
                         <viewLayoutGuide key="safeArea" id="HiC-hP-u05"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="ESi-wV-PkB" id="mxU-Bb-uYm"/>
+                        <outlet property="doneButton" destination="S9o-pH-s1I" id="WsR-aV-wdn"/>
                         <outlet property="recipeContent" destination="IXp-EM-gdi" id="bHF-h7-1zu"/>
                         <outlet property="titleText" destination="EXd-Le-8Tn" id="30d-2f-T4i"/>
                     </connections>
