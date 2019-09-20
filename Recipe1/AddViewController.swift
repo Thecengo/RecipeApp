@@ -33,6 +33,12 @@ class AddViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func addButtonClick(_ sender: Any) {
+        RecipeManager.addRecipe(title: titleText.text!, content: recipeContent.text)
+        
+        titleText.text = ""
+        recipeContent.text = ""
+    }
     @IBAction func doneButtonClick(_ sender: Any) {
         recipeContent.resignFirstResponder()
     }

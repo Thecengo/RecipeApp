@@ -15,7 +15,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet var mainTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return array.count
+       return RecipeManager.recipes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,8 +30,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
         
         //cell.textLabel?.textColor = UIColor.white
-        cell.textLabel?.text = array[indexPath.item]
-        cell.recipe = cell.textLabel?.text!
+        let recipe = RecipeManager.recipes[indexPath.item]
+        cell.textLabel?.text = recipe.title
+        cell.recipe = recipe
         
         return cell
     }
@@ -47,6 +48,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.mainTableView.reloadData()
         navigationController?.navigationBar.alpha = 0.5
     }
     
