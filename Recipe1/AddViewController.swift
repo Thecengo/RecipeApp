@@ -22,6 +22,8 @@ class AddViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,16 +31,23 @@ class AddViewController: UIViewController {
         recipeContent.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: .didReceiveData, object: nil)
-
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func addButtonClick(_ sender: Any) {
+        activityIndicator.startAnimating()
+    
         RecipeManager.addRecipe(title: titleText.text!, content: recipeContent.text)
-        
         titleText.text = ""
         recipeContent.text = ""
+        
+        activityIndicator.stopAnimating()
+      
+        let defaults = UserDefaults.standard
+        defaults.set("saverecipe", forKey:"myobject")
     }
+    
     @IBAction func doneButtonClick(_ sender: Any) {
         recipeContent.resignFirstResponder()
     }

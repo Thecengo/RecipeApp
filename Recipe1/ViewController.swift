@@ -37,6 +37,15 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            RecipeManager.deleteRecipe(id: indexPath.item)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailviewsegue"{
             let cell = sender as! CustomTableViewCell
@@ -57,6 +66,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         super.viewDidLoad()
         self.mainTableView.rowHeight = 70
         self.mainTableView.backgroundView = UIImageView(image:UIImage(named:"background"))
+        
+        let savedRecipe = UserDefaults.standard.string(forKey: "myobject")
+        print(savedRecipe,"...savedrecipe....")
+       //var myObject = defaults.object(forKey: "myobject") as? String
     }
 
 
