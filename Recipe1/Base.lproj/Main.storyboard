@@ -75,7 +75,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Add Recipe" id="eYa-x3-Wiw">
-                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="S9o-pH-s1I">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="S9o-pH-s1I">
                                             <connections>
                                                 <action selector="doneButtonClick:" destination="FMv-6K-6fZ" id="9vR-6y-cfW"/>
                                             </connections>

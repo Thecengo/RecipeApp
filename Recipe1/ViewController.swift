@@ -14,6 +14,30 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     @IBOutlet var mainTableView: UITableView!
     
+    override func viewDidLoad() {
+           super.viewDidLoad()
+           self.mainTableView.rowHeight = 70
+           self.mainTableView.backgroundView = UIImageView(image:UIImage(named:"background"))
+           
+           NSUserDefaultManager.initializee()
+
+       }
+    func initializeiCloud(){
+        let fileManager = NSFileProviderManager.default
+        let iCloudUrl = fileManager.providerIdentifier
+        if iCloudUrl != nil {
+            let store = NSUbiquitousKeyValueStore.default
+            let notification = NotificationCenter.default
+            notification.addObserver(self, selector: Selector(("updateFromiCloud:")), name: NSNotification.Name(rawValue: NSUbiquitousKeyValueStoreChangedKeysKey), object: store)
+            store.synchronize()
+        }
+    }
+    
+    func updateFromiCloud (notification: NSNotification) {
+        iCloudManager.getFromCloud()
+        mainTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return RecipeManager.recipes.count
     }
@@ -62,15 +86,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.mainTableView.rowHeight = 70
-        self.mainTableView.backgroundView = UIImageView(image:UIImage(named:"background"))
-        
-        let savedRecipe = UserDefaults.standard.string(forKey: "myobject")
-        print(savedRecipe,"...savedrecipe....")
-       //var myObject = defaults.object(forKey: "myobject") as? String
-    }
+   
 
 
 }

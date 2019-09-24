@@ -13,8 +13,8 @@ class RecipeManager: NSObject {
     static var recipes = [Recipe]()
     
     class func addRecipe(title: String, content: String){
-        var r = Recipe(title: title, content: content)
-        recipes.append(r)
+        let recipe = Recipe(title: title, content: content)
+        recipes.append(recipe)
     }
     
     class func deleteRecipe(id: Int){

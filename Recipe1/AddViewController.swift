@@ -44,8 +44,9 @@ class AddViewController: UIViewController {
         
         activityIndicator.stopAnimating()
       
-        let defaults = UserDefaults.standard
-        defaults.set("saverecipe", forKey:"myobject")
+        NSUserDefaultManager.synchronize()
+        
+        iCloudManager.sendToCloud()
     }
     
     @IBAction func doneButtonClick(_ sender: Any) {
