@@ -25,7 +25,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func initializeiCloud(){
         let fileManager = NSFileProviderManager.default
         let iCloudUrl = fileManager.providerIdentifier
-        if iCloudUrl != nil {
+        if iCloudUrl != nil && Reachability.isConnectedToNetwork(){
             let store = NSUbiquitousKeyValueStore.default
             let notification = NotificationCenter.default
             notification.addObserver(self, selector: Selector(("updateFromiCloud:")), name: NSNotification.Name(rawValue: NSUbiquitousKeyValueStoreChangedKeysKey), object: store)

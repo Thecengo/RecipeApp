@@ -14,7 +14,7 @@ extension Notification.Name {
     static let completedLengthyDownload = Notification.Name("completedLengthyDownload")
 }
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UIDocumentPickerDelegate{
 
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var recipeContent: UITextView!
@@ -24,6 +24,31 @@ class AddViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBAction func iCloudDocsClick(_ sender: Any) {
+        let documentPicker : UIDocumentPickerViewController = UIDocumentPickerViewController(documentTypes: ["public.txt"], in: UIDocumentPickerMode.import)
+        documentPicker.delegate = self
+        documentPicker.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        
+        self.present(documentPicker, animated: true, completion: nil)
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt url: URL) {
+        if controller.documentPickerMode == UIDocumentPickerMode.import {
+            let content = openFile(path: url.path, utf8: String.Encoding.utf8)
+            recipeContent.text = content
+        }
+    }
+    
+    func openFile(path: String, utf8: String.Encoding = String.Encoding.utf8) -> String? {
+        var isDir : ObjCBool = false
+        let filemanager = FileManager.default
+        do {
+            return try filemanager.fileExists(atPath: path, isDirectory:&isDir) ? String(contentsOfFile: path, encoding: utf8) : nil
+        } catch{
+            print("error is \(error.localizedDescription)")
+        }
+        return nil
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

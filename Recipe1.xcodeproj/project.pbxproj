@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		470568BC2339126E00C17715 /* NSUserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470568BB2339126E00C17715 /* NSUserDefaultManager.swift */; };
 		470568BE2339378100C17715 /* iCloudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470568BD2339378100C17715 /* iCloudManager.swift */; };
+		470568C0233A80C000C17715 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470568BF233A80C000C17715 /* Reachability.swift */; };
 		47CEB60D23338653002C9923 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CEB60C23338653002C9923 /* AppDelegate.swift */; };
 		47CEB60F23338653002C9923 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CEB60E23338653002C9923 /* ViewController.swift */; };
 		47CEB61223338653002C9923 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CEB61023338653002C9923 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		470568BB2339126E00C17715 /* NSUserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUserDefaultManager.swift; sourceTree = "<group>"; };
 		470568BD2339378100C17715 /* iCloudManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloudManager.swift; sourceTree = "<group>"; };
+		470568BF233A80C000C17715 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		47CEB60923338653002C9923 /* Recipe1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipe1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CEB60C23338653002C9923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47CEB60E23338653002C9923 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				47CEB61323338655002C9923 /* Assets.xcassets */,
 				47CEB61523338655002C9923 /* LaunchScreen.storyboard */,
 				47CEB61823338655002C9923 /* Info.plist */,
+				470568BF233A80C000C17715 /* Reachability.swift */,
 			);
 			path = Recipe1;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				47CEB6272333CE38002C9923 /* RecipeManager.swift in Sources */,
 				470568BC2339126E00C17715 /* NSUserDefaultManager.swift in Sources */,
 				47CEB61F2333A7EC002C9923 /* AddViewController.swift in Sources */,
+				470568C0233A80C000C17715 /* Reachability.swift in Sources */,
 				47CEB6212333A80E002C9923 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

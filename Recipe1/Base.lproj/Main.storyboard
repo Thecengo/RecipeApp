@@ -55,6 +55,9 @@
                                 <state key="normal" title="iCloudDocs">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="iCloudDocsClick:" destination="FMv-6K-6fZ" eventType="touchUpInside" id="QXZ-6g-Pwg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESi-wV-PkB">
                                 <rect key="frame" x="0.0" y="680" width="414" height="65"/>
